@@ -14,6 +14,37 @@
 		<div class="main-wrapper">
 			<div class="custom-navbar">
 				<button onclick="sidebarBtn()" class="sidebarBtn">Enable body scrolling</button>
+
+
+
+				<p class="admin-Card">
+					<a class="profileImg" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+					<img src="<?php echo base_url('assets/admin/images/profile.png'); ?>" alt="">
+					</a>
+					<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						Button with data-bs-target
+					</button>
+				</p>
+				<div class="collapse" id="collapseExample">
+					<div class="card card-body">
+						Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+					</div>
+				</div>
+
+
+
+				<div class="admin-Card">
+					<a class="profileImg" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+						<img src="<?php echo base_url('assets/admin/images/profile.png'); ?>" alt="">
+					</a>
+				</div>
+				<div>
+					<div class="collapse collapse-horizontal" id="collapseWidthExample">
+						<div class="card card-body">
+							This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</main>
