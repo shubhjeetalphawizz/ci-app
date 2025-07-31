@@ -5,6 +5,7 @@ class Home extends CI_Controller
 {
 	public function index()
 	{
+		$this->load->database();
 		$this->load->helper('url');
 		$this->load->view('front-end/header');
 		$this->load->view('front-end/pages/home');
