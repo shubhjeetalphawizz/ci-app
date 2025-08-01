@@ -8,4 +8,14 @@
 			<button type="submit">Submit</button>
 		</form>
 	</section>
+
+	<!-- <section>
+		<?php
+		$res = $this->db->get('home')->result_array(); ?>
+		<?php foreach ($res as $key => $row) { ?>
+
+			<p> <?= $row['paragraph'] ?></p>
+
+		<?php } ?>
+	</section> -->
 </div>
