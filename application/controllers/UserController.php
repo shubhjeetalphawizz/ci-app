@@ -1,29 +1,39 @@
 <?php
-class UserController extends CI_Controller {
+class UserController extends CI_Controller
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
-		$this->load->database();
-        $this->load->model('UserModel');                 // Load the model
-        $this->load->helper(array('form', 'url'));       // Load form & URL helpers
+        $this->load->database();
+        $this->load->model('UserModel');
+        $this->load->helper(array('form', 'url'));
     }
 
-    // Show the form
-    public function index() {
-        $this->load->view('user_form');                 // Load the view file (form)
+
+    public function index()
+    {
+        $this->load->view('user_form');
     }
 
-    // Handle form submission
-    public function saveUser() {
-        // Get POST data
+
+    public function saveUser()
+    {
+
         $data = array(
-            'title'  => $this->input->post('title'),       // Get 'name' input
-            'paragraph' => $this->input->post('paragraph')       // Get 'email' input
+            'title' => $this->input->post('title'),
+            'paragraph' => $this->input->post('paragraph')
         );
 
-        // Save to DB using model
         $this->UserModel->insertUser($data);
 
         echo "✅ Data Inserted Successfully!";
+    }
+
+    public function listUsers()
+    {
+        $this->load->model('UserModel');
+        $data['homes'] = $this->UserModel->getAllUsers();
+        $this->load->view('user_list', $data);
     }
 }

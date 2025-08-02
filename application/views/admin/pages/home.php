@@ -1,5 +1,4 @@
 <div class="main-wrapper">
-	<h1>hello</h1>
 
 	<section>
 		<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>">

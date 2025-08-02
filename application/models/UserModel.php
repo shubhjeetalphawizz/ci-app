@@ -5,4 +5,10 @@ class UserModel extends CI_Model {
     public function insertUser($data) {
         return $this->db->insert('home', $data);
     }
+
+    public function getAllUsers() {
+    $query = $this->db->get('home');
+    return $query->result(); 
+    
+}
 }
