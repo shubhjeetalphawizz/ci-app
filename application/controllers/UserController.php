@@ -18,27 +18,15 @@ class UserController extends CI_Controller
 
     public function saveUser()
     {
-        $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'jpg|jpeg|png|gif';
-        $config['max_size'] = 2048;
-
-        $this->load->library('upload', $config);
-
-        $image = '';
-
-        if ($this->upload->do_upload('image')) {
-            $uploadData = $this->upload->data();
-            $image = $uploadData['file_name'];
-        }
-
         $data = array(
             'title' => $this->input->post('title'),
             'paragraph' => $this->input->post('paragraph'),
-            'image' => $image
+            'image' => $this->input->post('image')
         );
 
         $this->UserModel->insertUser($data);
 
+        echo "✅ Data Inserted Successfully!";
     }
 
     public function listUsers()
