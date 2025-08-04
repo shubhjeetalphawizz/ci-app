@@ -67,6 +67,25 @@ class UserController extends CI_Controller
 		// $this->UserModel->insertDemoData($data);
 
 
+		$config['upload_path']          = './uploads/';
+		$config['allowed_types']        = 'gif|jpg|png';
+		$config['max_size']             = 100;
+		$config['max_width']            = 1024;
+		$config['max_height']           = 768;
+
+		$this->load->library('upload', $config);
+
+		if (! $this->upload->do_upload('image')) {
+			$error = array('error' => $this->upload->display_errors());
+			print_r($error);
+			die;
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+			print_r($data);
+			die;
+		}
+
+
 		$title = $this->input->post('title');
 		$description = $this->input->post('description');
 		$image = $this->input->post('image');
@@ -77,13 +96,11 @@ class UserController extends CI_Controller
 
 		);
 
-		// print_r($data);die();
 		$this->db->insert('demo_data', $data);
-		// $this->UserModel->insertDemoData($data);
 		redirect('admin/dashboard');
 	}
 
-	
+
 	public function showData()
 	{
 		$data['demos'] = $this->UserModel->getDemoData();

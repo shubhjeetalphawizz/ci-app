@@ -21,11 +21,13 @@
 			<?php if (!empty($homes)): ?>
 				<?php $i = 1;
 				foreach ($homes as $home): ?>
+				
 					<tr>
 						<td><?= $i++ ?></td>
 						<td><?= $home->title ?></td>
 						<td><?= $home->paragraph ?></td>
-						<td><img src="<?= !empty($home->image) ? base_url('uploads/' . $home->image) : base_url('uploads/blog1.png'); ?>" alt="<?= $home->title ?>" width="100">
+						<td><?php echo form_open_multipart('upload/');?>
+							<img src="<?= !empty($home->image) ? base_url('uploads/' . $home->image) : base_url('uploads/blog1.png'); ?>" alt="<?= $home->title ?>" width="100">
 							<!-- <td><img src="<?= base_url('uploads/' . $home->image) ?>" alt="<?= $home->title ?>" width="100"> -->
 						</td>
 					</tr>
@@ -43,6 +45,7 @@
 		foreach ($demos as $demo): ?>
 			<h2><?= $demo->title ?></h2>
 			<div><?= $demo->description	 ?></div>
+			<?php echo form_open_multipart('upload/');?>
 			<img src="<?= !empty($demo->image) ? base_url('uploads/' . $demo->image) : base_url('uploads/blog1.png'); ?>" alt="<?= $demo->title ?>" width="100">
 			<!-- <img src="<?= base_url('uploads/' . $demo->image) ?>" alt="<?= $demo->title ?>" width="100"> -->
 

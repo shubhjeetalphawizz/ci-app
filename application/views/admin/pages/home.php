@@ -10,7 +10,7 @@
 <div class="main-wrapper">
 
 	<section>
-		<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>">
+		<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>" enctype="multipart/form-data">
 			<input type="text" name="title" placeholder="Enter Name">
 			<input type="text" name="paragraph" placeholder="Enter Email">
 			<input type="file" name="image" required><br>
@@ -19,7 +19,7 @@
 	</section>
 
 	<section>
-		<form method="post" action="<?php echo site_url('UserController/demoData'); ?>">
+		<form method="post" action="<?php echo site_url('UserController/demoData'); ?>" enctype="multipart/form-data">
 			<input type="text" name="title" placeholder="Enter Name"><br>
 			<textarea name="description" id="editor" cols="30" rows="10"></textarea><br>
 			<input type="file" name="image" required><br>
