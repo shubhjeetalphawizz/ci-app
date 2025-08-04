@@ -45,59 +45,79 @@ class UserController extends CI_Controller
 
 	public function saveUser()
 	{
-		$data = array(
-			'title' => $this->input->post('title'),
-			'paragraph' => $this->input->post('paragraph'),
-			'image' => $this->input->post('image')
-		);
-
-		$this->UserModel->insertUser($data);
-
-		echo "✅ Data Inserted Successfully!";
-	}
-
-	public function demoData()
-	{
-		// $data = array(
-		//     'title' => $this->input->post('title'),
-		//     'description' => $this->input->post('description'),
-		//     'image' => $this->input->post('image')
-		// );
-
-		// $this->UserModel->insertDemoData($data);
-
-
-		$config['upload_path']          = './uploads/';
-		$config['allowed_types']        = 'gif|jpg|png';
-		$config['max_size']             = 100;
-		$config['max_width']            = 1024;
-		$config['max_height']           = 768;
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = 10000; // 100 KB
+		$config['max_width'] = 4000;
+		$config['max_height'] = 4000;
 
 		$this->load->library('upload', $config);
 
-		if (! $this->upload->do_upload('image')) {
+		if (!$this->upload->do_upload('image')) {
 			$error = array('error' => $this->upload->display_errors());
 			print_r($error);
 			die;
 		} else {
-			$data = array('upload_data' => $this->upload->data());
-			print_r($data);
-			die;
+			// Get uploaded file name
+			$upload_data = $this->upload->data();
+			$image = $upload_data['file_name'];
+
+			// Now get other POST fields
+			$title = $this->input->post('title');
+			$paragraph = $this->input->post('paragraph');
+
+			// Prepare data array
+			$data = array(
+				'title' => $title,
+				'paragraph' => $paragraph,
+				'image' => $image, // store filename only
+			);
+
+			// Insert into database
+			$this->db->insert('home', $data);
+
+			// Redirect
+			redirect('admin/dashboard');
 		}
+	}
 
 
-		$title = $this->input->post('title');
-		$description = $this->input->post('description');
-		$image = $this->input->post('image');
-		$data = array(
-			'title' => $title,
-			'description' => $description,
-			'image' => $image,
+	public function demoData()
+	{
+		$config['upload_path'] = './uploads/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = 10000; // 100 KB
+		$config['max_width'] = 4000;
+		$config['max_height'] = 4000;
 
-		);
+		$this->load->library('upload', $config);
 
-		$this->db->insert('demo_data', $data);
-		redirect('admin/dashboard');
+		if (!$this->upload->do_upload('image')) {
+			$error = array('error' => $this->upload->display_errors());
+			print_r($error);
+			die;
+		} else {
+			// Get uploaded file name
+			$upload_data = $this->upload->data();
+			$image = $upload_data['file_name'];
+
+			// Now get other POST fields
+			$title = $this->input->post('title');
+			$description = $this->input->post('description');
+
+			// Prepare data array
+			$data = array(
+				'title' => $title,
+				'description' => $description,
+				'image' => $image, // store filename only
+			);
+
+			// Insert into database
+			$this->db->insert('demo_data', $data);
+
+			// Redirect
+			redirect('admin/dashboard');
+		}
 	}
 
 
@@ -105,20 +125,10 @@ class UserController extends CI_Controller
 	{
 		$data['demos'] = $this->UserModel->getDemoData();
 		$this->load->view('admin/pages/user_list', $data);
-
-		// $homes = $this->UserModel->getAllUsers();
-		// echo "<pre>";
-		// print_r($homes);
-		// exit;
 	}
 	public function listUsers()
 	{
 		$data['homes'] = $this->UserModel->getAllUsers();
 		$this->load->view('admin/pages/user_list', $data);
-
-		// $homes = $this->UserModel->getAllUsers();
-		// echo "<pre>";
-		// print_r($homes);
-		// exit;
 	}
 }

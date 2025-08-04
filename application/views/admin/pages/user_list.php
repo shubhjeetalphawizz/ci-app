@@ -48,7 +48,6 @@
 			<?php echo form_open_multipart('upload/');?>
 			<img src="<?= !empty($demo->image) ? base_url('uploads/' . $demo->image) : base_url('uploads/blog1.png'); ?>" alt="<?= $demo->title ?>" width="100">
 			<!-- <img src="<?= base_url('uploads/' . $demo->image) ?>" alt="<?= $demo->title ?>" width="100"> -->
-
 		<?php endforeach; ?>
 	</section>
 </div>

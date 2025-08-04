@@ -19,7 +19,7 @@
 	</section>
 
 	<section>
-		<form method="post" action="<?php echo site_url('UserController/demoData'); ?>" enctype="multipart/form-data">
+		<form action="<?php echo site_url('UserController/demoData') ?>" method="post" enctype="multipart/form-data">
 			<input type="text" name="title" placeholder="Enter Name"><br>
 			<textarea name="description" id="editor" cols="30" rows="10"></textarea><br>
 			<input type="file" name="image" required><br>
