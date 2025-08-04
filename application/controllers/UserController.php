@@ -2,41 +2,96 @@
 class UserController extends CI_Controller
 {
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->database();
-        $this->load->model('UserModel');
-        $this->load->helper(array('form', 'url'));
-    }
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+		$this->load->model('UserModel');
+		$this->load->helper(array('form', 'url'));
+	}
 
 
-    public function index()
-    {
-        $this->load->view('user_form');
-    }
+	public function index()
+	{
+		$this->load->view('user_form');
+	}
 
-    public function saveUser()
-    {
-        $data = array(
-            'title' => $this->input->post('title'),
-            'paragraph' => $this->input->post('paragraph'),
-            'image' => $this->input->post('image')
-        );
+	// public function saveUser()
+	// {
+	// 	$config['upload_path']   = './uploads/';
+	// 	$config['allowed_types'] = 'jpg|jpeg|png|gif';
+	// 	$config['max_size']      = 2048;
 
-        $this->UserModel->insertUser($data);
+	// 	$this->load->library('upload', $config);
 
-        echo "✅ Data Inserted Successfully!";
-    }
+	// 	$image = '';
 
-    public function listUsers()
-    {
-        $data['homes'] = $this->UserModel->getAllUsers();
-        $this->load->view('admin/pages/user_list', $data);
+	// 	if ($this->upload->do_upload('image')) {
+	// 		$uploadData = $this->upload->data();
+	// 		$image = $uploadData['file_name']; 
+	// 	}
 
-        // $homes = $this->UserModel->getAllUsers();
-        // echo "<pre>";
-        // print_r($homes);
-        // exit;
-    }
+	// 	$data = array(
+	// 		'title'     => $this->input->post('title'),
+	// 		'paragraph' => $this->input->post('paragraph'),
+	// 		'image'     => $image
+	// 	);
+
+	// 	$this->UserModel->insertUser($data);
+
+	// 	echo "✅ Data Inserted Successfully!";
+	//	// http://localhost/ci-app/index.php/UserController/listUsers
+	// }
+
+	public function saveUser()
+	{
+		$data = array(
+			'title' => $this->input->post('title'),
+			'paragraph' => $this->input->post('paragraph'),
+			'image' => $this->input->post('image')
+		);
+
+		$this->UserModel->insertUser($data);
+
+		echo "✅ Data Inserted Successfully!";
+	}
+
+	public function demoData()
+	{
+		// $data = array(
+		//     'title' => $this->input->post('title'),
+		//     'description' => $this->input->post('description'),
+		//     'image' => $this->input->post('image')
+		// );
+
+		// $this->UserModel->insertDemoData($data);
+
+
+		$title = $this->input->post('title');
+		$description = $this->input->post('description');
+		$image = $this->input->post('image');
+		$data = array(
+			'title' => $title,
+			'description' => $description,
+			'image' => $image,
+
+		);
+
+		// print_r($data);die();
+		$this->db->insert('demo_data', $data);
+		// $this->UserModel->insertDemoData($data);
+		redirect('admin/dashboard');
+	}
+
+	
+	public function listUsers()
+	{
+		$data['homes'] = $this->UserModel->getAllUsers();
+		$this->load->view('admin/pages/user_list', $data);
+
+		// $homes = $this->UserModel->getAllUsers();
+		// echo "<pre>";
+		// print_r($homes);
+		// exit;
+	}
 }

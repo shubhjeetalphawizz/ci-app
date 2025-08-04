@@ -2,7 +2,11 @@
 class UserModel extends CI_Model
 {
 
-    // Insert a new user record into 'home' table
+    public function insertDemoData($data)
+    {
+        return $this->db->insert('demo_data', $data);
+    }
+
     public function insertUser($data)
     {
         return $this->db->insert('home', $data);
@@ -10,7 +14,13 @@ class UserModel extends CI_Model
 
     public function getAllUsers()
     {
-        $query = $this->db->get('home'); // Fetch all rows from 'home' table
-        return $query->result();         // Returns array of objects
+        $query = $this->db->get('home'); 
+        return $query->result();        
+    }
+
+    public function getDemoData()
+    {
+        $query = $this->db->get('demo_data'); 
+        return $query->result();        
     }
 }

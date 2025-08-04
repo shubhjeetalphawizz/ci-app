@@ -5,17 +5,17 @@ class admin extends CI_Controller
 {
 	public function dashboard()
 	{
-		// $this->load->view('admin/header');
-		// $this->load->view('admin/sidebar');
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
 		$this->load->view('admin/pages/home');
-		// $this->load->view('admin/footer');
+		$this->load->view('admin/footer');
 	}
 	
-	public function list()
+	public function showData()
 	{
-		// $this->load->view('admin/header');
-		// $this->load->view('admin/sidebar');
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
 		$this->load->view('admin/pages/user_list');
-		// $this->load->view('admin/footer');
+		$this->load->view('admin/footer');
 	}
 }

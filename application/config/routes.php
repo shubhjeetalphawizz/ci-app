@@ -13,4 +13,4 @@ $route['about'] = 'home/about';
 $route['dashboard'] = 'admin/dashboard';
 
 // http://localhost/ci-app/index.php/admin/list
-$route['list'] = 'admin/list';
+$route['list'] = 'admin/showData';
