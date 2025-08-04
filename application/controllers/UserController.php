@@ -84,6 +84,16 @@ class UserController extends CI_Controller
 	}
 
 	
+	public function showData()
+	{
+		$data['demos'] = $this->UserModel->getDemoData();
+		$this->load->view('admin/pages/user_list', $data);
+
+		// $homes = $this->UserModel->getAllUsers();
+		// echo "<pre>";
+		// print_r($homes);
+		// exit;
+	}
 	public function listUsers()
 	{
 		$data['homes'] = $this->UserModel->getAllUsers();

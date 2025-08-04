@@ -42,7 +42,7 @@
 		<?php
 		foreach ($demos as $demo): ?>
 			<h2><?= $demo->title ?></h2>
-			<div><?= $demo->paragraph ?></div>
+			<div><?= $demo->description	 ?></div>
 			<img src="<?= !empty($demo->image) ? base_url('uploads/' . $demo->image) : base_url('uploads/blog1.png'); ?>" alt="<?= $demo->title ?>" width="100">
 			<!-- <img src="<?= base_url('uploads/' . $demo->image) ?>" alt="<?= $demo->title ?>" width="100"> -->
 
