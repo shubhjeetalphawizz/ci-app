@@ -80,7 +80,7 @@ class UserController extends CI_Controller
 			print_r($error);
 			die;
 		} else {
-			$data = array('upload_data' => $this->upload->data());
+			$data = array('image' => $this->upload->data());
 			print_r($data);
 			die;
 		}
