@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 	.custom-navbar {
 		display: none;
 	}
@@ -6,7 +6,7 @@
 	.sidebar {
 		display: none;
 	}
-</style>
+</style> -->
 <div class="main-wrapper">
 	<table>
 		<thead>

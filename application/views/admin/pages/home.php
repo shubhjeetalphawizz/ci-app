@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 	.custom-navbar {
 		display: none;
 	}
@@ -6,7 +6,7 @@
 	.sidebar {
 		display: none;
 	}
-</style>
+</style> -->
 <div class="main-wrapper">
 
 	<section>
@@ -28,12 +28,10 @@
 	</section>
 </div>
 <script>
-	ClassicEditor
-		.create(document.querySelector('#editor'), {
-			toolbar: ['bold', 'italic', 'link', 'bulletedList', 'numberedList', 'undo', 'redo']
-		})
-		.catch(error => {
-			console.error(error);
-		});
+  ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+      console.error(error);
+    });
 </script>
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
