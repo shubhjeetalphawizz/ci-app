@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
 	.custom-navbar {
 		display: none;
 	}
@@ -6,25 +6,31 @@
 	.sidebar {
 		display: none;
 	}
-</style>
+</style> -->
 <div class="main-wrapper">
 
-	<section>
-		<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>" enctype="multipart/form-data">
-			<input type="text" name="title" placeholder="Enter Name">
-			<input type="text" name="paragraph" placeholder="Enter Email">
-			<input type="file" name="image" required><br>
-			<button type="submit">Submit</button>
-		</form>
+	<section class="contentSection">
+		<div class="container">
+			<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>"
+				enctype="multipart/form-data">
+				<input type="text" name="title" placeholder="Enter Name">
+				<input type="text" name="paragraph" placeholder="Enter Email">
+				<input type="file" name="image" required><br>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</section>
 
-	<section>
-		<form action="<?php echo site_url('UserController/demoData') ?>" method="post" enctype="multipart/form-data">
-			<input type="text" name="title" placeholder="Enter Name"><br>
-			<textarea name="description" id="editor" cols="30" rows="10"></textarea><br>
-			<input type="file" name="image" required><br>
-			<button type="submit">Submit</button>
-		</form>
+	<section class="contentSection">
+		<div class="container">
+			<form action="<?php echo site_url('UserController/demoData') ?>" method="post"
+				enctype="multipart/form-data">
+				<input type="text" name="title" placeholder="Enter Name"><br>
+				<textarea name="description" id="editor" cols="30" rows="10"></textarea><br>
+				<input type="file" name="image" required><br>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	</section>
 </div>
 <script>
