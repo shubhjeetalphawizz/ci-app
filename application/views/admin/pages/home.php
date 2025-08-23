@@ -11,13 +11,29 @@
 
 	<section class="contentSection">
 		<div class="container">
-			<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>"
-				enctype="multipart/form-data">
-				<input type="text" name="title" placeholder="Enter Name">
-				<input type="text" name="paragraph" placeholder="Enter Email">
-				<input type="file" name="image" required><br>
-				<button type="submit">Submit</button>
-			</form>
+			<div class="customCard">
+				<div class="cardHeader">
+					<h2>Hero Section</h2>
+				</div>
+				<div class="cardBody">
+				<form method="post" action="<?php echo site_url('UserController/saveUser'); ?>"
+					enctype="multipart/form-data">
+					<div class="inputFeald">
+						<label for="">Title</label>
+						<input type="text" name="title" placeholder="Enter your title.">
+					</div>
+					<div class="inputFeald">
+						<label for="">Description</label>
+						<input type="text" name="paragraph" placeholder="Enter description">
+					</div>
+					<div class="inputFeald">
+						<label for="">Upload Image</label>
+						<input type="file" name="image" required>
+					</div>
+					<button type="submit">Submit</button>
+				</form>
+				</div>
+			</div>
 		</div>
 	</section>
 

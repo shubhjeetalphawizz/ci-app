@@ -112,3 +112,64 @@ li {
 	border-bottom: 1px solid #0f2d5e54;
 	font-weight: 600;
 }
+.customCard {
+	border-radius: 15px;
+	border: 1px solid #0f2d5e40;
+	overflow: hidden;
+}
+.cardHeader h2 {
+	margin-bottom: 0;
+	font-size: 15px;
+	font-weight: 700;
+	color: #0f2d5e;
+	text-transform: uppercase;
+}
+.cardBody {
+	padding: 20px;
+}
+.cardHeader {
+	box-shadow: 0px -5px 8px 7px rgb(0 0 0 / 8%);
+	padding: 15px 20px;
+	border-bottom: 1px solid #cfcfcf;
+}
+.customCard .inputFeald {
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+}
+.customCard form button {
+	margin: 0 auto;
+	width: 15%;
+	background-color: #0f2d5e;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 14px;
+	height: 40px;
+	display: flex;
+	font-weight: 600;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+}
+.customCard form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+.customCard .inputFeald label {
+	font-size: 14px;
+	font-weight: 600;
+	padding-left: 5px;
+	margin-bottom: 1px;
+}
+.customCard .inputFeald input {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	height: 40px;
+	outline: none;
+	background-color: #fff;
+	font-size: 13px;
+	padding-left: 10px;
+	font-weight: 500;
+}
