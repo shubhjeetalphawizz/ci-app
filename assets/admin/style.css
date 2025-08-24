@@ -99,7 +99,7 @@ li {
 	display: block;
 }
 .contentSection {
-	padding: 50px 0;
+	padding: 25px 0;
 }
 .sidebarContent {
 }
@@ -114,6 +114,7 @@ li {
 }
 .customCard {
 	border-radius: 15px;
+	box-shadow: 0px -5px 8px 7px rgb(0 0 0 / 1%);
 	border: 1px solid #0f2d5e40;
 	overflow: hidden;
 }
@@ -128,7 +129,6 @@ li {
 	padding: 20px;
 }
 .cardHeader {
-	box-shadow: 0px -5px 8px 7px rgb(0 0 0 / 8%);
 	padding: 15px 20px;
 	border-bottom: 1px solid #cfcfcf;
 }
