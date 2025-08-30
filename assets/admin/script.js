@@ -6,4 +6,8 @@ function sidebarBtn() {
 	for (var j = 0; j < b.length; j++) {
 		b[j].classList.toggle('expand-container');
 	  }
+};
+
+function adminPanel() {
+  document.getElementsByClassName('adminCard')[0].classList.toggle('show');
 }

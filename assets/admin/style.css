@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
 	margin: 0;
@@ -14,11 +14,9 @@ li {
 	list-style: none;
 }
 
-
 .main-wrapper {
-	margin-left: 410px;
-	transition: .5s ease all;
-
+	margin-left: 400px;
+	transition: 0.5s ease all;
 }
 
 .sidebar-off {
@@ -27,22 +25,151 @@ li {
 
 .expand-container {
 	margin-left: 0;
-	transition: .5s ease all;
+	transition: 0.5s ease all;
 }
-.custom-navbar{
+.custom-navbar {
 	display: flex;
 	align-items: center;
+	padding: 10px 20px;
 	width: 100%;
 	justify-content: space-between;
+	background-color: #0f2d5e;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
-.profileImg{
+.profileImg {
 	font-size: 20px;
 	font-weight: 700;
+	cursor: pointer;
 	color: #000;
 }
-.profileImg img{
-	width: 70px;
-	height: 70px;
+.profileImg img {
+	width: 50px;
+	height: 50px;
 	object-fit: cover;
 	border-radius: 50%;
+	border: 3px solid #fff;
+}
+.custom-navbar button img {
+	filter: invert(1);
+	width: 25px;
+	height: auto;
+	object-fit: contain;
+}
+.custom-navbar button {
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+}
+.sidebar {
+}
+.sidebarHeader svg {
+	width: 215px;
+	height: auto;
+	object-fit: contain;
+}
+.sidebarHeader {
+	padding: 0 15px;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	border-bottom: 1px solid #0f2d5e;
+}
+
+.adminCard a {
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	width: 100%;
+}
+.adminCard {
+	display: none;
+	padding: 15px;
+	border: #0f2d5e 1px solid;
+	z-index: 9;
+	position: absolute;
+	background-color: #fff;
+	right: 15px;
+	top: 70px;
+	width: 200px;
+	border-radius: 10px;
+}
+.adminCard.show {
+	display: block;
+}
+.contentSection {
+	padding: 25px 0;
+}
+.sidebarContent {
+}
+.sidebarContent a {
+	display: flex;
+	width: 100%;
+	color: #0f2d5e;
+	padding: 15px 10px;
+	font-size: 14px;
+	border-bottom: 1px solid #0f2d5e54;
+	font-weight: 600;
+}
+.customCard {
+	border-radius: 15px;
+	box-shadow: 0px -5px 8px 7px rgb(0 0 0 / 1%);
+	border: 1px solid #0f2d5e40;
+	overflow: hidden;
+}
+.cardHeader h2 {
+	margin-bottom: 0;
+	font-size: 15px;
+	font-weight: 700;
+	color: #0f2d5e;
+	text-transform: uppercase;
+}
+.cardBody {
+	padding: 20px;
+}
+.cardHeader {
+	padding: 15px 20px;
+	border-bottom: 1px solid #cfcfcf;
+}
+.customCard .inputFeald {
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+}
+.customCard form button {
+	margin: 0 auto;
+	width: 15%;
+	background-color: #0f2d5e;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 14px;
+	height: 40px;
+	display: flex;
+	font-weight: 600;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+}
+.customCard form {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+.customCard .inputFeald label {
+	font-size: 14px;
+	font-weight: 600;
+	padding-left: 5px;
+	margin-bottom: 1px;
+}
+.customCard .inputFeald input {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	height: 40px;
+	outline: none;
+	background-color: #fff;
+	font-size: 13px;
+	padding-left: 10px;
+	font-weight: 500;
 }
